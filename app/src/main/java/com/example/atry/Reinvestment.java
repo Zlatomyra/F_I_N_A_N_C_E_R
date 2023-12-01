@@ -26,6 +26,15 @@ public class Reinvestment extends AppCompatActivity {
             }
         });
 
+        Button financierButton = findViewById(R.id.financier);
+        financierButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Reinvestment.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         inputCapital = findViewById(R.id.input_capital);
         inputPercent = findViewById(R.id.input_percent);
         inputPeriod = findViewById(R.id.input_period);

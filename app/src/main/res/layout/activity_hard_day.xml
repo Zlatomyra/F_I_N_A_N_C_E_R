@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Reinvestment"
+    tools:context=".HardDay"
     android:background="#363636"
     android:padding="16dp">
 
@@ -17,24 +17,23 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <Button
-        android:id="@+id/financier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Financier"
-        android:textColor="#fff"
-        android:backgroundTint="#363636"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:textSize="26dp"
-        android:textStyle="bold"
-        />
     <TextView
-        android:id="@+id/text_reinvest"
+        android:id="@+id/hard_procent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Реінвестування"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="11dp"
+        android:text="--Складні відсотки--"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@id/previous"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textmonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Обчислення за днями:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/previous"
@@ -45,12 +44,12 @@
     <FrameLayout
         android:id="@+id/lightGraySquare"
         android:layout_width="400dp"
-        android:layout_height="300dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="50dp"
         android:background="#696969"
-        android:layout_marginTop="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_reinvest"
+        app:layout_constraintTop_toBottomOf="@id/textmonth"
         android:layout_centerInParent="true"/>
 
     <EditText
@@ -59,21 +58,21 @@
         android:inputType="number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="126dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_reinvest"/>
+        app:layout_constraintTop_toBottomOf="@id/textmonth"/>
 
     <TextView
         android:id="@+id/text_capital"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="126dp"
         android:text="Капітал: "
         android:textColor="#FFFFFF"
         android:textSize="20sp"
+        android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_reinvest" />
+        app:layout_constraintTop_toBottomOf="@id/textmonth" />
 
     <EditText
         android:id="@+id/input_percent"
@@ -98,7 +97,7 @@
 
     <EditText
         android:id="@+id/input_period"
-        android:hint="Введіть кількість:"
+        android:hint="Введіть дні:"
         android:inputType="number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -111,34 +110,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Роки: "
+        android:text="Кількість періодів:"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_percent" />
-
-
-    <EditText
-        android:id="@+id/input_payment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
-        android:hint="Введіть кількість:"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_period" />
-
-    <TextView
-        android:id="@+id/text_payment"
-        android:layout_width="279dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:text="Нарахування: "
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_period" />
 
     <Button
         android:id="@+id/calculate_button"
@@ -147,7 +123,7 @@
         android:text="Результат"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_payment"/>
+        app:layout_constraintTop_toBottomOf="@id/input_period"/>
 
     <TextView
         android:id="@+id/result_text"
@@ -157,5 +133,19 @@
         android:textColor="#FFFFFF"
         app:layout_constraintTop_toBottomOf="@id/calculate_button"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/financier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Financier"
+        android:textColor="#fff"
+        android:backgroundTint="#363636"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

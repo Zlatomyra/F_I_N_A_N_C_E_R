@@ -18,7 +18,19 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-
+    <Button
+        android:id="@+id/financier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Financier"
+        android:textColor="#fff"
+        android:backgroundTint="#363636"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        />
 
     <TextView
         android:id="@+id/text_option"

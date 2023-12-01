@@ -40,5 +40,13 @@ public class SimpleHardProcent extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button financierButton = findViewById(R.id.financier);
+        financierButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SimpleHardProcent.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

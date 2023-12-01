@@ -17,6 +17,20 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
+    <Button
+        android:id="@+id/financier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Financier"
+        android:textColor="#fff"
+        android:backgroundTint="#363636"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        />
+
     <FrameLayout
         android:id="@+id/lightGraySquare"
         android:layout_width="400dp"
@@ -96,7 +110,7 @@
 
     <EditText
         android:id="@+id/input_period"
-        android:hint="Введіть кількість:"
+        android:hint="Введіть місяці"
         android:inputType="number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -109,7 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Кількість днів: "
+        android:text="Кількість періодів:"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"

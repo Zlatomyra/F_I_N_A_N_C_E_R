@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SimpleProcent"
     android:background="#363636"
-    android:padding="16dp">
+    android:padding="9dp">
 
 
     <Button
@@ -20,12 +20,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/financier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Financier"
+        android:textColor="#fff"
+        android:backgroundTint="#363636"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        />
+
     <TextView
         android:id="@+id/text_calc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
-        android:text="Обрахувати:"
+        android:text="Обчислити:"
         android:textColor="#fff"
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="за днями"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_calc" />
 
@@ -48,6 +63,7 @@
         android:layout_marginStart="124dp"
         android:layout_marginTop="25dp"
         android:text="за місяцями"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_calc" />
 
@@ -57,6 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="за роками"
+        android:textSize="16dp"
         app:layout_constraintStart_toEndOf="@id/month"
         app:layout_constraintTop_toBottomOf="@id/text_calc" />
 
@@ -66,6 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="ануїтетний кредит"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/days"/>
 
@@ -76,6 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="реінвестування"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/days"/>
 
