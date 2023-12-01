@@ -16,15 +16,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
+    <TextView
+        android:id="@+id/textmonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Обрахунки за роками"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/previous"
+        android:textSize="26dp"
+        android:textColor="#fff"
+        />
 
     <FrameLayout
         android:id="@+id/lightGraySquare"
         android:layout_width="400dp"
         android:layout_height="220dp"
+        android:layout_marginTop="100dp"
         android:background="#696969"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/previous"
+        app:layout_constraintTop_toBottomOf="@id/textmonth"
         android:layout_centerInParent="true"/>
 
     <EditText
@@ -33,20 +45,21 @@
         android:inputType="number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/previous"/>
+        app:layout_constraintTop_toBottomOf="@id/textmonth"/>
 
     <TextView
         android:id="@+id/text_capital"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
         android:text="Капітал: "
         android:textColor="#FFFFFF"
         android:textSize="20sp"
+        android:layout_marginTop="100dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/previous" />
+        app:layout_constraintTop_toBottomOf="@id/textmonth" />
 
     <EditText
         android:id="@+id/input_percent"
@@ -84,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Кількість періодів: "
+        android:text="Кількість років: "
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"

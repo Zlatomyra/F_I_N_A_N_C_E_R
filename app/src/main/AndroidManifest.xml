@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Try"
         tools:targetApi="31">
         <activity
+            android:name=".Reinvestment"
+            android:exported="false" />
+        <activity
+            android:name=".AnuityCredit"
+            android:exported="false" />
+        <activity
             android:name=".CalcYears"
             android:exported="false" />
         <activity

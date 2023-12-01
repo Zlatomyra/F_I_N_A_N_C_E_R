@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CalcDay"
+    tools:context=".Reinvestment"
     android:background="#363636"
     android:padding="16dp">
 
@@ -16,38 +16,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
-
     <TextView
-        android:id="@+id/textmonth"
+        android:id="@+id/text_reinvest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Обрахунки за днями"
+        android:text="Реінвестування"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/previous"
-        android:textSize="26dp"
-        android:textColor="#fff"
-        />
-    <TextView
-        android:id="@+id/textmethod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="--Метод ACT/ACT--"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textmonth"
-        android:textSize="26dp"
-        android:textColor="#fff"
-        />
-
-    <TextView
-        android:id="@+id/text_act360"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="--Метод ACT/360--"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textmethod"
         android:textSize="26dp"
         android:textColor="#fff"
         />
@@ -60,36 +36,8 @@
         android:layout_marginTop="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_act360"
+        app:layout_constraintTop_toBottomOf="@id/text_reinvest"
         android:layout_centerInParent="true"/>
-
-    <RadioGroup
-        android:id="@+id/radio_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="100dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_act360">
-
-        <RadioButton
-            android:id="@+id/ACT_ACT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ACT/ACT"
-            android:textColor="#fff"
-            android:textSize="18dp"/>
-
-        <RadioButton
-            android:id="@+id/ACT_360"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ACT/360"
-            android:textColor="#fff"
-            android:textSize="18dp"/>
-
-
-    </RadioGroup>
 
     <EditText
         android:id="@+id/input_capital"
@@ -97,20 +45,21 @@
         android:inputType="number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="126dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radio_group"/>
+        app:layout_constraintTop_toBottomOf="@id/text_reinvest"/>
 
     <TextView
         android:id="@+id/text_capital"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="126dp"
         android:text="Капітал: "
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radio_group" />
+        app:layout_constraintTop_toBottomOf="@id/text_reinvest" />
 
     <EditText
         android:id="@+id/input_percent"
@@ -135,7 +84,7 @@
 
     <EditText
         android:id="@+id/input_period"
-        android:hint="Введіть період:"
+        android:hint="Введіть кількість:"
         android:inputType="number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -148,11 +97,34 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Кількість днів:: "
+        android:text="Роки: "
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_percent" />
+
+
+    <EditText
+        android:id="@+id/input_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:hint="Введіть кількість:"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_period" />
+
+    <TextView
+        android:id="@+id/text_payment"
+        android:layout_width="279dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Нарахування: "
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_period" />
 
     <Button
         android:id="@+id/calculate_button"
@@ -161,7 +133,7 @@
         android:text="Результат"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_period"/>
+        app:layout_constraintTop_toBottomOf="@id/input_payment"/>
 
     <TextView
         android:id="@+id/result_text"

@@ -60,5 +60,24 @@
         app:layout_constraintStart_toEndOf="@id/month"
         app:layout_constraintTop_toBottomOf="@id/text_calc" />
 
+    <Button
+        android:id="@+id/an_credit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="ануїтетний кредит"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/days"/>
+
+
+    <Button
+        android:id="@+id/rein"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="реінвестування"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/days"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

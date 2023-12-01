@@ -41,6 +41,24 @@ public class SimpleProcent extends AppCompatActivity {
             }
         });
 
+        Button anCreditButton = findViewById(R.id.an_credit);
+        anCreditButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SimpleProcent.this, AnuityCredit.class);
+                startActivity(intent);
+            }
+        });
+
+        Button reinButton = findViewById(R.id.rein);
+        reinButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SimpleProcent.this, Reinvestment.class);
+                startActivity(intent);
+            }
+        });
+
         Button backButton = findViewById(R.id.previous);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
