@@ -53,11 +53,45 @@ public class HardYear extends AppCompatActivity {
 
     private void calculateResult() {
 
-        double P = Double.parseDouble(inputCapital.getText().toString());
-        double i = Double.parseDouble(inputPercent.getText().toString());
-        double n = Double.parseDouble(inputPeriod.getText().toString());
+        double P, i, n, S;
 
-        double result = P*Math.pow((1+i), n);
+        try {
+            P = Double.parseDouble(inputCapital.getText().toString());
+        } catch (NumberFormatException e) {
+            P = Double.NaN;
+        }
+
+        try {
+            i = Double.parseDouble(inputPercent.getText().toString());
+        } catch (NumberFormatException e) {
+            i = Double.NaN;
+        }
+
+        try {
+            n = Double.parseDouble(inputPeriod.getText().toString());
+        } catch (NumberFormatException e) {
+            n = Double.NaN;
+        }
+
+        int filledFields = 0;
+        if (!Double.isNaN(P)) {
+            filledFields++;
+        }
+
+        if (!Double.isNaN(i)) {
+            filledFields++;
+        }
+
+        if (!Double.isNaN(n)) {
+            filledFields++;
+        }
+
+        if (filledFields < 3) {
+            resultTextView.setText("Помилка: Заповніть всі поля.");
+            return;
+        }
+
+        double result = P*Math.pow((1+i/100), n);
         resultTextView.setText("Результат: " + result);
     }
 }

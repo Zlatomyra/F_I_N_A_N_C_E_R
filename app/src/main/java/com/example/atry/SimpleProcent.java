@@ -23,14 +23,6 @@ public class SimpleProcent extends AppCompatActivity {
             }
         });
 
-        Button monthButton = findViewById(R.id.month);
-        monthButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SimpleProcent.this, CalcMonth.class);
-                startActivity(intent);
-            }
-        });
 
         Button yearsButton = findViewById(R.id.years);
         yearsButton.setOnClickListener(new View.OnClickListener() {

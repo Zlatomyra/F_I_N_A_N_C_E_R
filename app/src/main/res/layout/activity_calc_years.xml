@@ -30,11 +30,24 @@
         android:textSize="26dp"
         android:textStyle="bold"
         />
+
+    <TextView
+        android:id="@+id/hard_procent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="11dp"
+        android:text="--Прості відсотки--"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@id/previous"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textmonth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Обрахунки за роками"
+        android:text="Обчислення за роками"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/previous"
@@ -42,10 +55,21 @@
         android:textColor="#fff"
         />
 
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Залиште порожнім поле, яке ви бажаєте знайти"
+        android:textColor="#fff"
+        android:textSize="17dp"
+        android:layout_marginTop="55dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textmonth"/>
+
     <FrameLayout
         android:id="@+id/lightGraySquare"
         android:layout_width="400dp"
-        android:layout_height="220dp"
+        android:layout_height="275dp"
         android:layout_marginTop="100dp"
         android:background="#696969"
         app:layout_constraintStart_toStartOf="parent"
@@ -117,6 +141,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_percent" />
 
+    <EditText
+        android:id="@+id/input_sum"
+        android:hint="Введіть суму"
+        android:inputType="number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_period"/>
+
+    <TextView
+        android:id="@+id/text_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Нарощена сума:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_period" />
+
     <Button
         android:id="@+id/calculate_button"
         android:layout_width="0dp"
@@ -124,13 +169,13 @@
         android:text="Результат"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_period"/>
+        app:layout_constraintTop_toBottomOf="@id/text_sum"/>
 
     <TextView
         android:id="@+id/result_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Результат"
+
         android:textColor="#FFFFFF"
         app:layout_constraintTop_toBottomOf="@id/calculate_button"
         app:layout_constraintStart_toStartOf="parent"/>

@@ -53,7 +53,7 @@ public class Reinvestment extends AppCompatActivity {
     }
 
     protected float GetCapitalization(float P, int n, float i, int number) {
-        float S = (float) (P * Math.pow((1 + n * i), number));
+        float S = (float) (P * Math.pow((1 + n * i/100), number));
         return S;
     }
 

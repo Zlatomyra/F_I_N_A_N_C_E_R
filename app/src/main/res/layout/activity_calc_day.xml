@@ -31,16 +31,39 @@
         />
 
     <TextView
+        android:id="@+id/hard_procent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="11dp"
+        android:text="--Прості відсотки--"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@id/previous"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/textmonth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Обрахунки за днями"
+        android:text="Обчислення за днями"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/previous"
         android:textSize="26dp"
         android:textColor="#fff"
         />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Залиште порожнім поле, яке ви бажаєте знайти"
+        android:textColor="#fff"
+        android:textSize="17dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textmonth"/>
     <TextView
         android:id="@+id/textmethod"
         android:layout_width="wrap_content"
@@ -65,10 +88,22 @@
         android:textColor="#fff"
         />
 
+    <TextView
+        android:id="@+id/text_360_360"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--Метод 360/360--"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_act360"
+        android:textSize="26dp"
+        android:textColor="#fff"
+        />
+
     <FrameLayout
         android:id="@+id/lightGraySquare"
         android:layout_width="400dp"
-        android:layout_height="300dp"
+        android:layout_height="350dp"
         android:background="#696969"
         android:layout_marginTop="100dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,6 +113,7 @@
 
     <RadioGroup
         android:id="@+id/radio_group"
+        android:checkedButton="@id/ACT_ACT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -98,6 +134,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ACT/360"
+            android:textColor="#fff"
+            android:textSize="18dp"/>
+
+        <RadioButton
+            android:id="@+id/З60_360"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="360/360"
             android:textColor="#fff"
             android:textSize="18dp"/>
 
@@ -167,6 +211,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_percent" />
 
+    <EditText
+        android:id="@+id/input_sum"
+        android:hint="Введіть суму"
+        android:inputType="number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_period"/>
+
+    <TextView
+        android:id="@+id/text_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Нарощена сума:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_period" />
+
     <Button
         android:id="@+id/calculate_button"
         android:layout_width="0dp"
@@ -174,13 +239,13 @@
         android:text="Результат"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_period"/>
+        app:layout_constraintTop_toBottomOf="@id/text_sum"/>
 
     <TextView
         android:id="@+id/result_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Результат"
+        android:textSize="20dp"
         android:textColor="#FFFFFF"
         app:layout_constraintTop_toBottomOf="@id/calculate_button"
         app:layout_constraintStart_toStartOf="parent"/>

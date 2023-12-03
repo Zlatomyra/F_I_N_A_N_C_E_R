@@ -67,7 +67,7 @@ public class AnuityCredit extends AppCompatActivity {
         float S = resultArray[0];
         float R = resultArray[1];
 
-        resultTextView.setText("Результат: S = " + S + ", R = " + R);
+        resultTextView.setText("Результат: Нарощена сума = " + S + ", Разова виплата = " + R);
 
 
     }

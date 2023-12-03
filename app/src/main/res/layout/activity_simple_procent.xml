@@ -20,6 +20,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/hard_procent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="11dp"
+        android:text="--Прості відсотки--"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@id/previous"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/financier"
         android:layout_width="wrap_content"
@@ -56,16 +68,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_calc" />
 
-    <Button
-        android:id="@+id/month"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="25dp"
-        android:text="за місяцями"
-        android:textSize="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_calc" />
+
 
     <Button
         android:id="@+id/years"
@@ -74,8 +77,8 @@
         android:layout_marginTop="25dp"
         android:text="за роками"
         android:textSize="16dp"
-        app:layout_constraintStart_toEndOf="@id/month"
-        app:layout_constraintTop_toBottomOf="@id/text_calc" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/days" />
 
     <Button
         android:id="@+id/an_credit"
@@ -84,8 +87,8 @@
         android:layout_marginTop="25dp"
         android:text="ануїтетний кредит"
         android:textSize="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/days"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_calc"/>
 
 
     <Button

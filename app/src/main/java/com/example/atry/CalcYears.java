@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class CalcYears extends AppCompatActivity {
-    private EditText inputCapital, inputPercent, inputPeriod;
+    private EditText inputCapital, inputPercent, inputPeriod, inputSum;
     private TextView resultTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,9 @@ public class CalcYears extends AppCompatActivity {
         inputCapital = findViewById(R.id.input_capital);
         inputPercent = findViewById(R.id.input_percent);
         inputPeriod = findViewById(R.id.input_period);
+        inputSum = findViewById(R.id.input_sum);
         resultTextView = findViewById(R.id.result_text);
+
 
         Button calculateButton = findViewById(R.id.calculate_button);
 
@@ -51,12 +53,75 @@ public class CalcYears extends AppCompatActivity {
     }
 
     private void calculateResult() {
+        double P, i, n, S;
 
-        double P = Double.parseDouble(inputCapital.getText().toString());
-        double i = Double.parseDouble(inputPercent.getText().toString());
-        double n = Double.parseDouble(inputPeriod.getText().toString());
+        try {
+            P = Double.parseDouble(inputCapital.getText().toString());
+        } catch (NumberFormatException e) {
+            P = Double.NaN;
+        }
 
-        double result = P*(1+n*(i/100));
-        resultTextView.setText("Результат: " + result);
+        try {
+            i = Double.parseDouble(inputPercent.getText().toString());
+        } catch (NumberFormatException e) {
+            i = Double.NaN;
+        }
+
+        try {
+            n = Double.parseDouble(inputPeriod.getText().toString());
+        } catch (NumberFormatException e) {
+            n = Double.NaN;
+        }
+
+        try {
+            S = Double.parseDouble(inputSum.getText().toString());
+        } catch (NumberFormatException e) {
+            S = Double.NaN;
+        }
+
+        int filledFields = 0;
+        if (!Double.isNaN(P)) {
+            filledFields++;
+        }
+
+        if (!Double.isNaN(i)) {
+            filledFields++;
+        }
+
+        if (!Double.isNaN(n)) {
+            filledFields++;
+        }
+
+        if (!Double.isNaN(S)) {
+            filledFields++;
+        }
+
+        if (filledFields < 3) {
+            resultTextView.setText("Помилка: Заповніть принаймні три поля.");
+            return;
+        }
+        double result;
+
+        if (Double.isNaN(S)) {
+            result = P * (1 + n * (i / 100));
+            resultTextView.setText(String.valueOf("Нарощена сума: "+Math.round(result)));
+
+        } else if (Double.isNaN(P)) {
+            result = S / (1 + n * (i/100));
+            resultTextView.setText(String.valueOf("Капітал: "+Math.round(result)));
+
+        } else if (Double.isNaN(i)) {
+            result = (S - P) / (P * n) * 100;
+            resultTextView.setText(String.valueOf("Відсоткова ставка: "+Math.round(result)));
+
+        } else if (Double.isNaN(n)) {
+            result = (int) ((S - P) / (P * (i/100)));
+            resultTextView.setText(String.valueOf("Кількість років: "+result));
+
+        } else {
+            result = 0;
+        }
+
+
     }
 }
